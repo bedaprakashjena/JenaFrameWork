@@ -3,7 +3,7 @@ pipeline
     agent any
     
     tools{
-        maven 'maven'
+        maven 'Maven'
         }
 
     stages 
@@ -45,8 +45,8 @@ pipeline
         stage('Run Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/naveenanimation20/Feb2024POMSeries.git'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/test_regression.xml"
+                    git 'https://github.com/bedaprakashjena/JenaFrameWork.git'
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/test_regression.xml"
                     
                 }
             }
@@ -89,8 +89,8 @@ pipeline
         stage('Run Sanity Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/naveenanimation20/Feb2024POMSeries.git'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/test_sanity.xml"
+                    git 'https://github.com/bedaprakashjena/JenaFrameWork.git'
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/test_sanity.xml"
                     
                 }
             }
