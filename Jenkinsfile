@@ -10,7 +10,9 @@ pipeline
     {
         stage('Build') 
         {
-           
+             steps{
+                echo("deploy to h")
+            }
         }
         
         stage("Deploy to Dev"){
